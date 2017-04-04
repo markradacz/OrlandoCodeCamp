@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" 
+	xmlns:local="clr-namespace:com.ithiredguns.orlandocodecamp"	
+	x:Class="com.ithiredguns.orlandocodecamp.AnnouncementDetailsPage">
+<ScrollView x:Name="outerScrollView" BackgroundColor="White">
+
+		<Grid x:Name="layeringGrid" RowSpacing="0" VerticalOptions="FillAndExpand">
+			
+
+			<StackLayout 
+				Spacing="0" 
+				Padding="0" 
+				VerticalOptions="FillAndExpand">
+
+				<StackLayout 
+					Padding="0"
+					Spacing="0"	
+					VerticalOptions="FillAndExpand">
+
+
+
+					<StackLayout 
+						Orientation="Vertical" 
+						Padding="20" 
+						BackgroundColor="White">
+						<Label 
+							Text="{ Binding Announcement.PublishOn }" 
+							TextColor="#252525" 
+							HorizontalOptions="StartAndExpand" FontAttributes="Bold" /> 
+					</StackLayout>
+
+					<BoxView Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+					<StackLayout Padding="20" BackgroundColor="White">
+						<!-- MAIN PARAGRAPH -->
+						<Label
+							Text="{ Binding Announcement.Message }"
+							VerticalOptions="EndAndExpand"
+							TextColor="#8a8a8a" />
+					</StackLayout>
+
+
+
+					<!-- POSTED -->
+					<Grid
+						ColumnSpacing="10" 
+						RowSpacing="10"
+						Padding="20,20,20,40" 
+						BackgroundColor="White">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						
+						<StackLayout Orientation="Horizontal"
+							Grid.ColumnSpan="2" Grid.Row="0"
+							VerticalOptions="Center">
+
+							<ic:CircleImage 
+								Source="logo.png" 
+								Style="{ StaticResource AvatarXSmall }"
+								VerticalOptions="Center"/>
+							<Label 
+								Text="by Orlando Code Camp"
+								TextColor="Blue" 
+								FontAttributes="Bold"
+								VerticalTextAlignment="Center"/>
+							
+						</StackLayout>
+
+
+						<StackLayout Grid.Row="1"
+							Orientation="Horizontal" 
+							VerticalOptions="Center"
+							Grid.ColumnSpan="2">
+
+
+							<Label
+								Text="{ Binding Session.SpeakerCompany }"
+								TextColor="{StaticResource AccentColor}" 
+								FontAttributes="Bold" 
+								VerticalTextAlignment="Start"/>
+						</StackLayout>
+
+					</Grid>
+
+
+
+				</StackLayout>
+			</StackLayout>
+		</Grid>
+	</ScrollView>
+</ContentPage>

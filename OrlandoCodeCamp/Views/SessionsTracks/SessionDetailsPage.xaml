@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="com.ithiredguns.orlandocodecamp.SessionDetailsPage"
+	xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" 
+	xmlns:local="clr-namespace:com.ithiredguns.orlandocodecamp"		
+	>
+	<ScrollView x:Name="outerScrollView" BackgroundColor="White">
+
+		<Grid x:Name="layeringGrid" RowSpacing="0" VerticalOptions="FillAndExpand">
+			<Grid Padding="0" BackgroundColor="Black" >
+
+				<!-- MAIN IMAGE -->
+				<Image
+					x:Name="img"
+					Source="{ Binding Session.SpeakerAvatarURL }"
+					Aspect="AspectFill"
+					HorizontalOptions="StartAndExpand"
+					VerticalOptions="Start"
+					Opacity=".8"
+				/>
+			</Grid>
+
+			<StackLayout 
+				Spacing="0" 
+				Padding="0" 
+				VerticalOptions="FillAndExpand">
+
+				<StackLayout 
+					Padding="0"
+					Spacing="0"	
+					VerticalOptions="FillAndExpand">
+
+					<StackLayout 
+						Padding="20" 
+						x:Name="headers" 
+						HeightRequest="260"
+						AnchorX="0">
+
+						<!-- HEADERS -->
+						<Label
+							Text="{ Binding Session.Name }"
+							LineBreakMode="WordWrap"
+							VerticalOptions="FillAndExpand"
+							TextColor="White"
+							FontSize="28"
+							FontAttributes="None"
+							VerticalTextAlignment="End"/>
+
+						<StackLayout 
+							Orientation="Horizontal" 
+							VerticalOptions="End" >
+
+							<Label
+								Text="{ Binding Session.SpeakerFullName, StringFormat='BY {0:F0}'} }"
+								VerticalOptions="Center"
+								TextColor="{ StaticResource BrandColorLight }" 
+								HorizontalOptions="End" />
+							
+						</StackLayout>
+
+					</StackLayout>
+
+					<StackLayout 
+						Orientation="Vertical" 
+						Padding="20" 
+						BackgroundColor="White">
+						<Label 
+							Text="{ Binding Session.Track.Name }" 
+							TextColor="#252525" 
+							HorizontalOptions="StartAndExpand" FontAttributes="Bold" />
+						<Label 
+							Text="{ Binding Session.TimeslotInfo }" 
+							TextColor="#8c8c8c" 
+							HorizontalOptions="StartAndExpand" FontAttributes="Bold"/>
+						<Label 
+							Text="{ Binding Session.TrackRoomNumber, StringFormat='Room #: {0}' }" 
+							TextColor="#8c8c8c" 
+							HorizontalOptions="StartAndExpand" FontAttributes="Bold" />
+					</StackLayout>
+
+					<BoxView Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+					<StackLayout Padding="20" BackgroundColor="White">
+						<!-- MAIN PARAGRAPH -->
+						<Label
+							Text="{ Binding Session.Description }"
+							VerticalOptions="EndAndExpand"
+							TextColor="#8a8a8a" />
+					</StackLayout>
+
+
+
+					<!-- POSTED -->
+					<Grid
+						ColumnSpacing="10" 
+						RowSpacing="10"
+						Padding="20,20,20,40" 
+						BackgroundColor="White">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						
+						<StackLayout Orientation="Horizontal"
+							Grid.ColumnSpan="2" Grid.Row="0"
+							VerticalOptions="Center">
+
+							<ic:CircleImage 
+								Source="{ Binding Session.SpeakerAvatarURL }" 
+								Style="{ StaticResource AvatarXSmall }"
+								VerticalOptions="Center"/>
+							<Label 
+								Text="{ Binding Session.SpeakerFullName, StringFormat='by {0:F0}'} }"
+								TextColor="Blue" 
+								FontAttributes="Bold"
+								VerticalTextAlignment="Center">
+								<Label.GestureRecognizers>
+       					 			<TapGestureRecognizer
+                						Tapped="OnTapGestureRecognizerSpeakerTapped"
+               				  		/>
+ 						 </Label.GestureRecognizers>
+							</Label>
+							
+						</StackLayout>
+
+
+						<StackLayout Grid.Row="1"
+							Orientation="Horizontal" 
+							VerticalOptions="Center"
+							Grid.ColumnSpan="2">
+
+
+							<Label
+								Text="{ Binding Session.SpeakerCompany }"
+								TextColor="{StaticResource AccentColor}" 
+								FontAttributes="Bold" 
+								VerticalTextAlignment="Start"/>
+						</StackLayout>
+
+					</Grid>
+
+					<BoxView Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+				</StackLayout>
+
+
+
+
+
+
+
+			</StackLayout>
+		</Grid>
+
+	</ScrollView>
+</ContentPage>

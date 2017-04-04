@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:occ="clr-namespace:com.ithiredguns.orlandocodecamp"
+	
+	x:Class="com.ithiredguns.orlandocodecamp.SpeakerItemTemplate">
+
+
+	<Grid BackgroundColor="Black">
+			<Image 
+				Source="{Binding AvatarURL}"
+				Aspect="AspectFill"
+				Opacity=".7"/>
+			
+		<Grid 
+			ColumnSpacing="0" 
+			RowSpacing="0" 
+			Padding="20"
+
+			>
+
+			<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="40" />
+
+			</Grid.RowDefinitions>
+
+			<StackLayout Grid.Row="0" VerticalOptions="End" HorizontalOptions="Start">
+				<Label
+					FontSize="30"
+					FontAttributes="Bold"
+					Text="{Binding FullName}" 
+					LineBreakMode="WordWrap"
+					TextColor="White"
+					/>
+			</StackLayout>
+
+
+			<StackLayout 
+				Orientation="Horizontal" 
+				HorizontalOptions="Fill"
+				VerticalOptions="FillAndExpand"
+				Grid.Row="1">
+					<Label 
+						Text="{Binding Company}"
+						TextColor="White" 
+						FontAttributes="Bold" 
+						HorizontalOptions="StartAndExpand" 
+						VerticalOptions="Start" />
+					 
+					
+				</StackLayout>
+
+		</Grid>
+	</Grid>
+	
+</ContentView>

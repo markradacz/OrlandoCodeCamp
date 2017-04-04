@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="com.ithiredguns.orlandocodecamp.TimingsPage">
+	<ContentPage.Content>
+		<ListView x:Name="lstTimings"  
+					 
+					ItemSelected="Handle_ItemSelected"
+					ItemTapped="Handle_ItemTapped"
+					>
+					<ListView.ItemTemplate>
+					<DataTemplate>
+					 <TextCell Text="{Binding TimeslotFullString}" />
+					</DataTemplate>
+
+					</ListView.ItemTemplate>
+				</ListView>
+			 
+	</ContentPage.Content>
+</ContentPage>

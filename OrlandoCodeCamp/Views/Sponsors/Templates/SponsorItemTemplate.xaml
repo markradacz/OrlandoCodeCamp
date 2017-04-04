@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="com.ithiredguns.orlandocodecamp.SponsorItemTemplate"
+	xmlns:local="clr-namespace:com.ithiredguns.orlandocodecamp"		
+	BackgroundColor="#DFDFDF"
+	Padding="10"
+	>
+	<!-- Outer container: 
+	this creates the structure that holds the card 
+	and the shadow at the bottom  -->
+
+	<Grid RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="1" />
+		</Grid.RowDefinitions>
+
+		<!-- Article likes -->
+		<Grid 
+			BackgroundColor="White"
+			ColumnSpacing="0" 
+			RowSpacing="0" 
+			Padding="20"
+		>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="44" />
+
+			</Grid.RowDefinitions>
+
+			<!-- Card Header -->
+			<AbsoluteLayout >
+
+				<!-- Avatar -->
+				<Image Source="{Binding AvatarURL }" Aspect="AspectFit" 
+				 />
+				
+			</AbsoluteLayout>
+
+			<!-- Card Body -->
+			<StackLayout 
+				Padding="0,20,0,0" 
+				Spacing="20"
+				Grid.Row="1" HorizontalOptions="StartAndExpand">
+
+			 
+				<!-- Card title -->
+				<Label 
+					Text="{Binding CompanyName}"
+					FontSize="24"/>
+				<Label Text="{Binding SponsorLevel}" FontAttributes="Bold" FontSize="20" />
+				
+			</StackLayout>
+
+			<!-- Card Footer -->
+			<StackLayout 
+				VerticalOptions="End"
+				Spacing="0" 
+				Padding="0,10,0,0"
+				Orientation="Horizontal"
+				Grid.Row="2"
+				>
+
+
+			</StackLayout>
+
+		</Grid>
+
+
+		<!-- CARDS SHADOW -->
+		<BoxView
+			HeightRequest="1" 
+			BackgroundColor="Gray" 
+			Opacity=".5"
+			Grid.Row="1" 
+		/>
+
+	</Grid>
+
+</ContentView>

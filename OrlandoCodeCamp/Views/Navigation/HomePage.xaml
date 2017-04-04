@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	x:Class="com.ithiredguns.orlandocodecamp.HomePage" Title="Home" BackgroundColor="#666666">
+
+	<ScrollView>
+	<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="2*" />	
+			<RowDefinition Height="*"/>
+			 
+
+				
+			</Grid.RowDefinitions>
+			<StackLayout Grid.Row="0" VerticalOptions="StartAndExpand" Padding="0,0,0,0">
+			<maps:Map WidthRequest="320" HeightRequest="260"
+            x:Name="MyMap"
+            IsShowingUser="true"
+            MapType="Street"
+						
+        	/>
+
+			</StackLayout>
+
+			<Grid Grid.Row="1" BackgroundColor="#000000"  Padding="5,0,0,0">
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="20" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="20" />
+				</Grid.ColumnDefinitions>
+				<Label TextColor="White" Text="{Binding EventIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+						  Grid.Column="0" TranslationY="2"
+						HorizontalOptions="Start" VerticalOptions="Start"/>
+				<Label TextColor="White" Text="{Binding ChevronRightIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+						  Grid.Column="2" 
+						HorizontalOptions="Center" VerticalOptions="Center"/>
+				
+				<Grid  Grid.Row="0"  Grid.Column="1" Padding="0,0,0,5" RowSpacing="0"> 
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<Label TextColor="White" Grid.Row="0"  Text="Event Info" FontSize ="20"
+						 FontAttributes="Bold"
+						HorizontalOptions="StartAndExpand" />
+
+					<Label TextColor="White" Grid.Row="1" Text="{Binding EventInfo.CompleteAddress}" 
+						FontSize="16" LineBreakMode="WordWrap"  HorizontalOptions="StartAndExpand" />
+					
+					<Label TextColor="White" Grid.Row="2" Text="{Binding EventTimings}" 
+						FontSize="16"  HorizontalOptions="StartAndExpand"/>
+				</Grid>
+
+
+				<Grid.GestureRecognizers>
+					 <TapGestureRecognizer Tapped="OnGetDirectionsClicked" />
+				</Grid.GestureRecognizers>
+
+			</Grid>
+			
+		
+
+			<!--<Grid Grid.Row="2" RowSpacing="0" BackgroundColor="#4c4c4c"  Padding="5,5,0,5" >
+
+				<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="20" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="20" />
+				</Grid.ColumnDefinitions>
+				<Label TextColor="White" Text="{Binding NavigationIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+						Grid.RowSpan="3" Grid.Column="0" TranslationY="2"
+						HorizontalOptions="Start" VerticalOptions="Start"/>
+				<Label TextColor="White" Text="{Binding ChevronRightIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+						Grid.RowSpan="3" Grid.Column="2" 
+						HorizontalOptions="Center" VerticalOptions="Center"/>
+				<Label TextColor="White" Grid.Row="0" Grid.Column="1" Text="Directions" FontSize ="20"
+						 FontAttributes="Bold"
+						HorizontalOptions="StartAndExpand" />
+				<Label TextColor="White" Grid.Row="1" Grid.Column="1" Text="{Binding Address1}" FontSize="14" HorizontalOptions="StartAndExpand"/>
+				<Label TextColor="White" Grid.Row="2" Grid.Column="1" Text="{Binding CityStateCountryZip}" FontSize="14" HorizontalOptions="StartAndExpand" />
+				 
+
+				<Grid.GestureRecognizers>
+					 <TapGestureRecognizer Tapped="OnGetDirectionsClicked" />
+				</Grid.GestureRecognizers>
+
+			</Grid>
+-->
+
+			<Grid Grid.Row="2" RowSpacing="0" BackgroundColor="#4c4c4c" Padding="5,5,0,0">
+
+				<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="20" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="20" />
+				</Grid.ColumnDefinitions>
+				
+				<Label TextColor="White" Text="{Binding EmailIcon}"  Style="{DynamicResource MainMenuIconStyle}"
+							Grid.RowSpan="2" Grid.Column="0" TranslationY="2" 
+							HorizontalOptions="Start" VerticalOptions="Start"></Label>
+				<Label TextColor="White" Text="{Binding ChevronRightIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+						Grid.RowSpan="2" Grid.Column="2" 
+						HorizontalOptions="Center" VerticalOptions="Center"/>
+				<Label TextColor="White" Grid.Row="0" Grid.Column="1" Text="Contact" FontSize ="20"
+						 FontAttributes="Bold"
+						HorizontalOptions="StartAndExpand"/>
+				 
+				<Label  Grid.Row="1" Grid.Column="1" 
+						Text="{Binding EventInfo.ContactEmail,StringFormat='email: {0}'}" FontSize="16" 
+						TextColor="White"  FontAttributes="Bold" 
+						HorizontalOptions="StartAndExpand"/>	
+
+			<Grid.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnEmailClicked" />
+			</Grid.GestureRecognizers>
+
+			</Grid>
+
+	</Grid>
+	</ScrollView>
+
+</ContentPage>

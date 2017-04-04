@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="com.ithiredguns.orlandocodecamp.SpeakerViewPage"
+	Title="Speaker Info">
+
+		<Grid>
+			<Grid.RowDefinitions>
+			<RowDefinition Height="200" />
+			<RowDefinition Height="100" />
+
+			<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<Image Grid.Row="0" Source="{Binding AvatarURL}" Aspect="AspectFit" />
+			 
+
+			 <StackLayout Grid.Row="1" x:Name="EcommerceProductGridBanner" 
+					Style="{StaticResource SpeakerNameBannerStyle}" 
+					Padding="0,5,0,0" >
+				
+					<Label
+						FontSize="20"
+						Text="{Binding FullName}" 
+						HorizontalTextAlignment="Center" 
+						VerticalTextAlignment="Center"
+						TextColor="White" 
+					/>
+					<Label
+						FontSize="14"
+						Text="{Binding Title}" 
+						TextColor="White" 
+						HorizontalTextAlignment="Center" 
+						VerticalTextAlignment="Center"
+					/>
+					<Label
+						FontSize="14"
+						Text="{Binding MVPDetails}" 
+						TextColor="White" 
+						HorizontalTextAlignment="Center" 
+						VerticalTextAlignment="Center"
+					/>
+
+				</StackLayout>
+			<ScrollView Grid.Row="2" Padding="5,5,5,5">
+			<Grid RowSpacing="10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+
+				<RowDefinition Height="Auto"  />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+						
+				</Grid.RowDefinitions>
+
+			
+		
+			<Label Grid.Row="0" Grid.Column="0" Text="Company: "
+				 FontAttributes="Bold" FontSize="18"	HorizontalOptions="Start" /> 
+			<Label Grid.Row="0" Grid.Column="1" Text="{Binding Company}"
+				 FontSize="18"	HorizontalOptions="StartAndExpand" /> 
+			
+
+			<Label Grid.Row="1" Grid.Column="0" Text="Blog: "
+				FontSize="18" FontAttributes="Bold"	HorizontalOptions="Start"  />
+			<Label Grid.Row="1" Grid.Column="1" Text="{Binding Blog}"
+			 TextColor="Blue"	HorizontalOptions="StartAndExpand"  >
+					
+					 <Label.GestureRecognizers>
+       					 <TapGestureRecognizer
+                			Tapped="OnTapGestureRecognizerBlogTapped"
+               				  />
+ 					 </Label.GestureRecognizers>
+			</Label>
+
+					
+			<Label Grid.Row="2" Grid.Column="0" Text="Twitter: "
+				FontSize="18" FontAttributes="Bold"	HorizontalOptions="Start" />
+
+		 	<Label Grid.Row="2" Grid.Column="1" Text="{Binding Twitter}"
+				TextColor="Blue" FontSize="18"	HorizontalOptions="StartAndExpand" >
+				<Label.GestureRecognizers>
+       					 <TapGestureRecognizer
+                			Tapped="OnTapGestureRecognizerTwitterTapped"
+               				  />
+ 				</Label.GestureRecognizers>
+
+			</Label>
+
+					
+			<Label Grid.Row="3" Grid.Column="0" Text ="Website: " 
+			  FontSize="18"	FontAttributes="Bold"	HorizontalOptions="Start"/>
+			<Label Grid.Row="3" Grid.Column="1" Text ="{Binding Website}" 
+				TextColor="Blue" FontSize="18"	HorizontalOptions="StartAndExpand">
+				<Label.GestureRecognizers>
+       					 <TapGestureRecognizer
+                			Tapped="OnTapGestureRecognizerWebsiteTapped"
+               				  />
+ 				</Label.GestureRecognizers>
+			</Label>
+
+			<Label Grid.Row="4" Grid.ColumnSpan="2" Text ="{Binding Bio}" 
+			   FontSize="18" Opacity="0.8"	TextColor="Black" HorizontalOptions="StartAndExpand"/>
+					
+			</Grid>
+			</ScrollView>
+
+
+		</Grid>
+		
+</ContentPage>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="com.ithiredguns.orlandocodecamp.SponsorDetailsPage"
+	Title="Sponsor Details">
+
+
+
+		<Grid>
+			<Grid.RowDefinitions>
+			<RowDefinition Height="200" />
+			<RowDefinition Height="1" />
+			<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<Image Grid.Row="0" Source="{Binding AvatarURL}" Aspect="AspectFit" BackgroundColor="Black" />
+			<BoxView Grid.Row="1" Style="{ StaticResource Horizontal1ptLineStyle }" />
+			<ScrollView Grid.Row="2" Padding="5,5,5,5">
+			<Grid RowSpacing="10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+
+				<RowDefinition Height="Auto"  />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+						
+				</Grid.RowDefinitions>
+
+			
+		
+			<Label Grid.Row="0" Grid.Column="0" Text="Company Name: "
+				 FontAttributes="Bold" FontSize="18"	HorizontalOptions="Start" /> 
+			<Label Grid.Row="0" Grid.Column="1" Text="{Binding CompanyName}"
+				 FontSize="18"	HorizontalOptions="StartAndExpand" /> 
+			
+
+			<Label Grid.Row="1" Grid.Column="0" Text="Sponsor Level: "
+				FontSize="18" FontAttributes="Bold"	HorizontalOptions="Start"  />
+			<Label Grid.Row="1" Grid.Column="1" Text="{Binding SponsorLevel}"
+				 BackgroundColor="{Binding SponsorBackgroundColor}"	HorizontalOptions="StartAndExpand"  />
+
+					
+			<Label Grid.Row="2" Grid.Column="0" Text="Twitter: "
+				FontSize="18" FontAttributes="Bold"	HorizontalOptions="Start" />
+
+		 	<Label Grid.Row="2" Grid.Column="1" Text="{Binding Twitter}"
+				FontSize="18"	HorizontalOptions="StartAndExpand" />
+
+					
+			<Label Grid.Row="3" Grid.Column="0" Text ="Website: " 
+			  FontSize="18"	FontAttributes="Bold"	HorizontalOptions="Start"/>
+			<Label Grid.Row="3" TextColor="Blue" Grid.Column="1" Text ="{Binding Website}" 
+				FontSize="18"	HorizontalOptions="StartAndExpand">
+				<Label.GestureRecognizers>
+       				 <TapGestureRecognizer
+                			Tapped="OnTapGestureRecognizerWebsiteTapped"
+               			/>
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label Grid.Row="4" Grid.ColumnSpan="2" Text ="{Binding Bio}" 
+			   FontSize="18" Opacity="0.8"	TextColor="Black" HorizontalOptions="StartAndExpand"/>
+					
+			</Grid>
+			</ScrollView>
+
+
+		</Grid>
+		
+
+	
+</ContentPage>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+		
+	x:Class="com.ithiredguns.orlandocodecamp.BrandBlock"
+	 
+	Padding="20">
+	<Grid  
+		ColumnSpacing="10"
+		 
+		Padding="0"
+		Style="{ StaticResource BrandContainerStyle }">
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+
+		<controls:CircleImage 
+			Grid.Column="0"
+			HeightRequest="64" 
+			WidthRequest="64" 
+			Source="{ StaticResource BrandImage }" 
+			BackgroundColor="{ StaticResource AccentColor }"
+				BorderColor="Blue" 
+				BorderThickness="2" FillColor= "{ StaticResource AccentColor}"
+			/>
+
+		<StackLayout
+			Grid.Column="1"
+			Orientation="Vertical"
+			HorizontalOptions="Start"
+			VerticalOptions="Center"
+			Spacing="0">
+			<Label 
+				Style="{ DynamicResource BrandNameStyle }"
+				Text="Orlando" 
+				FontAttributes="Bold" 
+				VerticalTextAlignment="Start"/>
+			<Label 
+				Style="{ DynamicResource BrandNameStyle }"
+				Text="Code" 
+				VerticalTextAlignment="Start"/> 
+			<Label 
+				Style="{ DynamicResource BrandNameStyle }"
+				Text="Camp" 
+				VerticalTextAlignment="Start"/> 
+		</StackLayout>
+
+	</Grid>
+</ContentView>
