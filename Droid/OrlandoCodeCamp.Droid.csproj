@@ -39,7 +39,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidKeyStore></AndroidKeyStore>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
