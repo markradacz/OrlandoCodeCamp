@@ -7,11 +7,9 @@
 		<AbsoluteLayout>
 			<SearchBar x:Name="sessionSearch" Placeholder="Search..." 
 			TextChanged="Handle_TextChanged"
-			BackgroundColor="#000000" 
 			AbsoluteLayout.LayoutBounds="0, 0, 1, 40" 
 			AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 		</AbsoluteLayout>
-		<StackLayout BackgroundColor="#000000" Padding="5,0,5,0">
 			<ListView x:Name="lstSessionDetails" HasUnevenRows="true" SeparatorVisibility="None" ItemTapped="Handle_ItemTapped">
 				<ListView.ItemTemplate>
 					<DataTemplate>
@@ -21,6 +19,5 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-		</StackLayout>
 	</StackLayout>
 </ContentPage>

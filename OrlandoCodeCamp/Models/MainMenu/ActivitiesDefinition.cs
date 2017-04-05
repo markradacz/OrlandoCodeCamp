@@ -185,7 +185,7 @@ namespace com.ithiredguns.orlandocodecamp
 					ActivitiesList = new List<Activity> {
 						 
 						new Activity("Tracks", typeof(TracksPage), ActivityData.DashboardImagesList[4], '\uf121'),
-						new Activity("Timings", typeof(TimingsPage), ActivityData.DashboardImagesList[4], '\uf017'),
+						new Activity("Times", typeof(TimingsPage), ActivityData.DashboardImagesList[4], '\uf017'),
 						new Activity("Speakers", typeof(SpeakersPage), ActivityData.DashboardImagesList[4], '\uf2c0')
 					}
 				}

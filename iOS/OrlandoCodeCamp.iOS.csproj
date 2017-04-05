@@ -18,7 +18,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: SRINATH NANDURI (734T8ZQXYS)</CodesignKey>
+    <CodesignKey>iPhone Developer: Marek Radacz (8YRNDKLBR8)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchUseSGen>true</MtouchUseSGen>
@@ -29,7 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>anycpu</PlatformTarget>
-    <CodesignProvision>9b847c58-7831-45b3-b0b9-f8c0cb7c0ceb</CodesignProvision>
+    <CodesignProvision>f25abb14-33cf-46ea-b67a-346eed3216b4</CodesignProvision>
     <MtouchFloat32>true</MtouchFloat32>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">

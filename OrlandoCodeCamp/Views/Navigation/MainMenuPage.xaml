@@ -7,22 +7,20 @@
 		Title="Main Menu" 
 		Style="{ StaticResource MainMenuStyle }"
 		Icon="{ StaticResource HamburguerIcon }">
-	<Grid
-		VerticalOptions="FillAndExpand" 
-		Padding="0,20,0,10">
-
-		<Grid.RowDefinitions>
-			<RowDefinition Height="100" />
-			<RowDefinition Height="Auto" />
-
-		</Grid.RowDefinitions>
-
-		<Grid
-			Grid.Row="0"
-			HorizontalOptions="Start" 
-			VerticalOptions="Start">
-
-			<!-- LOGO -->
+		<ListView 
+		    Grid.Row="1" 
+			x:Name="activityListView" 
+			ItemSelected="OnItemSelected"
+			ItemsSource="{ Binding ActivitiesGroupedByCategory }"
+			IsGroupingEnabled="true"
+			GroupDisplayBinding="{ Binding Name }"
+			SeparatorVisibility="None"
+			VerticalOptions="FillAndExpand"
+			Style="{ DynamicResource MainMenuListViewStyle }"
+			 >
+			<ListView.Header>
+    <StackLayout Orientation="Horizontal">
+ 			<!-- LOGO -->
 			<commonViews:BrandBlock  />
 
 		
@@ -36,21 +34,8 @@
 				HorizontalOptions="End"
 				VerticalOptions="Start"
 			/>
-
-		 </Grid>
-
-		
-		<ListView 
-		    Grid.Row="1" 
-			x:Name="activityListView" 
-			ItemSelected="OnItemSelected"
-			ItemsSource="{ Binding ActivitiesGroupedByCategory }"
-			IsGroupingEnabled="true"
-			GroupDisplayBinding="{ Binding Name }"
-			SeparatorVisibility="None"
-			VerticalOptions="FillAndExpand"
-			Style="{ DynamicResource MainMenuListViewStyle }"
-			 >
+    </StackLayout>
+			</ListView.Header>
 				<ListView.GroupHeaderTemplate> 
 					<DataTemplate> 
 						<ViewCell> 
@@ -66,6 +51,9 @@
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
+				<ListView.Footer>
+					<Label />
+				</ListView.Footer>
+
 		</ListView>
-	</Grid>
 </ContentPage>

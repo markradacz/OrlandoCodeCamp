@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	x:Class="com.ithiredguns.orlandocodecamp.TracksPage">
-	<StackLayout Spacing="0">
+	<StackLayout Spacing="0"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+
 		<AbsoluteLayout>
-			<SearchBar x:Name="trackSearch" Placeholder="Search..." TextChanged="Handle_TextChanged" BackgroundColor="#000000" AbsoluteLayout.LayoutBounds="0, 0, 1, 40" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+			<SearchBar x:Name="trackSearch" Placeholder="Search..." TextChanged="Handle_TextChanged" AbsoluteLayout.LayoutBounds="0, 0, 1, 40" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 		</AbsoluteLayout>
-		<StackLayout BackgroundColor="#000000" Padding="5,0,5,0">
-			 
 				<ListView x:Name="lstTracks" 
 					IsPullToRefreshEnabled="true" 
 					Refreshing="Handle_Refreshing"
@@ -20,8 +21,9 @@
 					</DataTemplate>
 
 					</ListView.ItemTemplate>
+			<ListView.Footer>
+				<Label />
+			</ListView.Footer>
 				</ListView>
-			 
-		</StackLayout>
 	</StackLayout>
 </ContentPage>

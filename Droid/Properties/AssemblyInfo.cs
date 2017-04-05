@@ -8,9 +8,9 @@ using Android.App;
 [assembly: AssemblyTitle("OrlandoCodeCamp.Droid")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mobile RAD Solutions")]
-[assembly: AssemblyProduct("OrlandoCodeCamp.Droid")]
-[assembly: AssemblyCopyright("(c) SRINATH NANDURI & MARK J RADACZ")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("web")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -25,8 +25,3 @@ using Android.App;
 
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
-#if DEBUG
-[assembly: Application(Debuggable=true)]
-#else
-[assembly: Application(Debuggable = false)]
-#endif

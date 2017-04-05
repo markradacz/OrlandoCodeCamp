@@ -15,10 +15,10 @@ namespace com.ithiredguns.orlandocodecamp
 		
 		
 			vm = new TimingsViewModel();
-			NavigationPage.SetBackButtonTitle(this, "Timings");
+			NavigationPage.SetBackButtonTitle(this, "Times");
 
 			lstTimings.ItemsSource = GetTimings();
-			Title = "Timings";
+			Title = "Times";
 		}
 
 		ObservableCollection<Timeslot> GetTimings(string searchText = null)

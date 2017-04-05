@@ -56,6 +56,6 @@
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>UIRequiresFullScreen</key>
- 	<string>YES</string>
+	<string>YES</string>
 </dict>
 </plist>
