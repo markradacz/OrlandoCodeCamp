@@ -131,6 +131,7 @@ namespace com.ithiredguns.orlandocodecamp
 					}
 					catch (Exception ex)
 					{
+						Xamarin.Insights.Report(ex);
 						completitionSource.SetException(ex);
 					}
 				});

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace com.ithiredguns.orlandocodecamp.Helpers
+{
+    public static class TrackingConstants
+    {
+        public const string
+        ViewName = "View Name",
+
+        UserInterfaceEvent = "User Interface",
+
+        ViewLoaded = "View Loaded",
+        ViewUnloaded = "View Unloaded",
+        ViewDisplayed = "View Displayed",
+        ViewHidden = "View Removed",
+        ViewBound = "View Bound",
+        ViewUnbound = "View Unbound",
+
+        UserError = "User Error",
+        UserErrorView = "View",
+        UserErrorTitle = "Error Title",
+        UserErrorMessage = "Error Message",
+
+        Category = "Category",
+        EventName = "Event Name",
+        EventData = "Event Data",
+
+        Performance = "Performance";
+    }
+}

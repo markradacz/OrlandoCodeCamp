@@ -546,6 +546,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_allSessionsList = null;
 			}
 
@@ -575,6 +576,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_allTimeSlotsList = null;
 			}
 
@@ -601,6 +603,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_allTracksList = null;
 			}
 			return _allTracksList;
@@ -627,6 +630,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_allSpeakersList = null;
 			}
 			return _allSpeakersList;
@@ -652,6 +656,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_allSponsorsList = null;
 			}
 
@@ -685,6 +690,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_allAnnouncementsList = null;
 			}
 
@@ -709,8 +715,9 @@ namespace com.ithiredguns.orlandocodecamp
 					seed = true;
 				}
 			}
-			catch (Exception e)
+			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				seed = true;
 			}
 			finally

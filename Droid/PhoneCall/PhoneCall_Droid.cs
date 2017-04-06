@@ -35,6 +35,7 @@ namespace com.ithiredguns.orlandocodecamp.Droid
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				new AlertDialog.Builder(Android.App.Application.Context).SetPositiveButton("OK", (sender, args) =>
 				 {
 					 //User pressed OK

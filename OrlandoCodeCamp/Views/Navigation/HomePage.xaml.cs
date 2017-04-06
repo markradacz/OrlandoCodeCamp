@@ -136,6 +136,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_event = new Event(); //just point to blank 
 			}
 
@@ -148,45 +149,55 @@ namespace com.ithiredguns.orlandocodecamp
 		private void OnGetDirectionsClicked(object sender, EventArgs args)
 		{
 			//			var address = _address;
-
-			var address = vm.StreetAddress;
-			switch (Device.OS)
+			try
 			{
-				case TargetPlatform.iOS:
-					//Device.OpenUri(
-					//  new Uri(string.Format("http://maps.apple.com/?ll={0}",vm.EventInfo.GPSLatitude+","+vm.EventInfo.GPSLongitude)));
+				var address = vm.StreetAddress;
+				switch (Device.OS)
+				{
+					case TargetPlatform.iOS:
+						//Device.OpenUri(
+						//  new Uri(string.Format("http://maps.apple.com/?ll={0}",vm.EventInfo.GPSLatitude+","+vm.EventInfo.GPSLongitude)));
 
-					Device.OpenUri(new Uri(String.Format("http://maps.apple.com/?daddr={0}",address)));
-				
-					break;
+						Device.OpenUri(new Uri(String.Format("http://maps.apple.com/?daddr={0}", address)));
 
-				case TargetPlatform.Android:
-					//	Device.OpenUri(
-					//	  new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(address))));
+						break;
 
-					Device.OpenUri(
-						new Uri(string.Format("geo:latitude,longitude",vm.EventInfo.GPSLatitude,vm.EventInfo.GPSLongitude)));
-				
-					break;
-				case TargetPlatform.Windows:
-				case TargetPlatform.WinPhone:
-					Device.OpenUri(
-					  new Uri(string.Format("bingmaps:?cp={0}", vm.EventInfo.GPSLatitude+"~"+vm.EventInfo.GPSLongitude)));
-					break;
+					case TargetPlatform.Android:
+						Device.OpenUri(
+						  new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(address))));
+
+						break;
+					case TargetPlatform.Windows:
+					case TargetPlatform.WinPhone:
+						Device.OpenUri(
+						  new Uri(string.Format("bingmaps:?cp={0}", vm.EventInfo.GPSLatitude + "~" + vm.EventInfo.GPSLongitude)));
+						break;
+				}
 			}
+			catch (Exception ex)
+			{
+				Xamarin.Insights.Report(ex);
+			}
+
 		}
 
 		private void OnEmailClicked(object sender, EventArgs args)
 		{
-			 
+
 			////Call phone..
 			//DisplayAlert("Calling phone", "Call Phone " + _initialContactPhone, "ok");
 			//DependencyService.Get<IPhoneCall>().MakePhoneCall(_initialContactPhone);
 
 
 			//open email
-
-			Device.OpenUri(new Uri("mailto:" + vm.EventInfo.ContactEmail ));
+			try
+			{
+				Device.OpenUri(new Uri("mailto:" + vm.EventInfo.ContactEmail));
+			}
+			catch (Exception ex)
+			{
+				Xamarin.Insights.Report(ex);
+			}
 
 		}
 	}

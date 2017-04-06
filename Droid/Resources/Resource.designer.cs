@@ -27,6 +27,7 @@ namespace OrlandoCodeCamp.Droid
 		public static void UpdateIdValues()
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::OrlandoCodeCamp.Droid.Resource.Attribute.actionBarSize;
+			global::Splat.Resource.String.library_name = global::OrlandoCodeCamp.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
@@ -4083,6 +4084,9 @@ namespace OrlandoCodeCamp.Droid
 			
 			// aapt resource value: 0x7f08001b
 			public const int common_signin_button_text_long = 2131230747;
+			
+			// aapt resource value: 0x7f08005c
+			public const int library_name = 2131230812;
 			
 			// aapt resource value: 0x7f08001f
 			public const int mr_button_content_description = 2131230751;

@@ -93,6 +93,7 @@ namespace com.ithiredguns.orlandocodecamp
 				}
 				catch (Exception ex)
 				{
+					Xamarin.Insights.Report(ex);
 					return " ";
 				}
 			}
@@ -130,6 +131,7 @@ namespace com.ithiredguns.orlandocodecamp
 				}
 				catch (Exception ex)
 				{
+					Xamarin.Insights.Report(ex);
 					return " ";
 				}
 			}
@@ -152,6 +154,7 @@ namespace com.ithiredguns.orlandocodecamp
 				}
 				catch (Exception ex)
 				{
+					Xamarin.Insights.Report(ex);
 					return " ";
 				}
 			}
@@ -172,8 +175,9 @@ namespace com.ithiredguns.orlandocodecamp
 						return String.Empty;
 					}
 				}
-				catch (Exception e)
+				catch (Exception ex)
 				{
+					Xamarin.Insights.Report(ex);
 					return " ";
 				}
 			}

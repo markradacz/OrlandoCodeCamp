@@ -10,6 +10,8 @@ using Android.OS;
 using Android.Graphics.Drawables;
 using ImageCircle.Forms.Plugin.Droid;
 using Android;
+using Xamarin.Forms;
+using Splat;
 using com.ithiredguns.orlandocodecamp;
 
 namespace OrlandoCodeCamp.Droid
@@ -33,6 +35,14 @@ namespace OrlandoCodeCamp.Droid
 			ImageCircleRenderer.Init();
 			Xamarin.FormsMaps.Init(this, bundle);
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+
+			Locator.CurrentMutable.RegisterLazySingleton(
+				() => new InsightsAnalytics(() =>
+						Xamarin.Insights.Initialize(
+						"4210544450842ddd6a192e67c5977783c907a7c8", //production id
+						this)
+				),
+				typeof(IAnalytics));
 
 			LoadApplication(new App());
 		}

@@ -67,6 +67,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				//show empty set;
 				lstAnnouncementDetails.IsRefreshing = true;
 				lstAnnouncementDetails.ItemsSource = new ObservableCollection<Announcement>();
@@ -117,6 +118,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 			catch (Exception ex)
 			{
+				Xamarin.Insights.Report(ex);
 				_announcements = new ObservableCollection<Announcement>(); //just point to blank 
 			}
 
