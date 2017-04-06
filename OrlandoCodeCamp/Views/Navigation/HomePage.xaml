@@ -10,12 +10,11 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="2*" />	
 			<RowDefinition Height="*"/>
-			 
 
 				
 			</Grid.RowDefinitions>
 			<StackLayout Grid.Row="0" VerticalOptions="StartAndExpand" Padding="0,0,0,0">
-			<maps:Map WidthRequest="320" HeightRequest="260"
+			<maps:Map WidthRequest="320" HeightRequest="320"
             x:Name="MyMap"
             IsShowingUser="true"
             MapType="Street"
@@ -31,10 +30,10 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="20" />
 				</Grid.ColumnDefinitions>
-				<Label TextColor="White" Text="{Binding EventIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+				<Label TextColor="White" Text="&#xf073;"  Style="{DynamicResource MainMenuIconStyle}" 
 						  Grid.Column="0" TranslationY="2"
 						HorizontalOptions="Start" VerticalOptions="Start"/>
-				<Label TextColor="White" Text="{Binding ChevronRightIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+				<Label TextColor="White" Text="&#xf054;"  Style="{DynamicResource MainMenuIconStyle}" 
 						  Grid.Column="2" 
 						HorizontalOptions="Center" VerticalOptions="Center"/>
 				
@@ -49,10 +48,10 @@
 						HorizontalOptions="StartAndExpand" />
 
 					<Label TextColor="White" Grid.Row="1" Text="{Binding EventInfo.CompleteAddress}" 
-						FontSize="16" LineBreakMode="WordWrap"  HorizontalOptions="StartAndExpand" />
+						FontSize="18" LineBreakMode="WordWrap"  HorizontalOptions="StartAndExpand" />
 					
 					<Label TextColor="White" Grid.Row="2" Text="{Binding EventTimings}" 
-						FontSize="16"  HorizontalOptions="StartAndExpand"/>
+						FontSize="20"  HorizontalOptions="StartAndExpand"/>
 				</Grid>
 
 
@@ -99,10 +98,10 @@
 				<ColumnDefinition Width="20" />
 				</Grid.ColumnDefinitions>
 				
-				<Label TextColor="White" Text="{Binding EmailIcon}"  Style="{DynamicResource MainMenuIconStyle}"
+				<Label TextColor="White" Text="&#xf003;"  Style="{DynamicResource MainMenuIconStyle}"
 							Grid.RowSpan="2" Grid.Column="0" TranslationY="2" 
 							HorizontalOptions="Start" VerticalOptions="Start"></Label>
-				<Label TextColor="White" Text="{Binding ChevronRightIcon}"  Style="{DynamicResource MainMenuIconStyle}" 
+				<Label TextColor="White" Text="&#xf054;"  Style="{DynamicResource MainMenuIconStyle}" 
 						Grid.RowSpan="2" Grid.Column="2" 
 						HorizontalOptions="Center" VerticalOptions="Center"/>
 				<Label TextColor="White" Grid.Row="0" Grid.Column="1" Text="Contact" FontSize ="20"

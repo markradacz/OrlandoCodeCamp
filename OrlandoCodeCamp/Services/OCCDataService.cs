@@ -728,7 +728,7 @@ namespace com.ithiredguns.orlandocodecamp
 					_event.ID = 1;
 					_event.AttendeeRegistrationOpen = true;
 					_event.CompleteAddress = "University Partnership Building, Seminole State College (Sanford), 100 Weldon Blvd, Sanford FL 32746";
-					_event.EventStart = DateTime.Parse(" 4/8/2017 8:00:00 AM");
+					_event.EventStart = DateTime.Parse("4/8/2017 8:00:00 AM");
 					_event.EventEnd = DateTime.Parse ("4/8/2017 5:00:00 PM");
 					_event.IsCurrent = true;
 					_event.SocialMediaHashtag = "#OrlandoCC";

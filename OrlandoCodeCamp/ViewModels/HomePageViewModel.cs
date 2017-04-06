@@ -75,7 +75,7 @@ namespace com.ithiredguns.orlandocodecamp
 			{
 				if (EventInfo != null)
 				{
-					return EventInfo.EventStart.ToString() + " to " + EventInfo.EventEnd.ToString();
+					return string.Format("{0:M/d/yyyy h:mm tt}", EventInfo.EventStart) + " to " + string.Format("{0:t}", EventInfo.EventEnd);
 				}
 				else
 				{
