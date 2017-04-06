@@ -23,6 +23,7 @@ namespace com.ithiredguns.orlandocodecamp
 			 vm = new HomePageViewModel();
 
 				vm.EventInfo = App.occDataService.EventInfo(false);
+				vm.APEventInfo = App.occDataService.APEventInfo; 
 				//this.BindingContext = vm;
 
 
@@ -143,6 +144,38 @@ namespace com.ithiredguns.orlandocodecamp
 			return _event;
 
 
+
+		}
+
+		private void OnGetAfterPartyDirectionsClicked(object sender, EventArgs args)
+		{
+			//			var address = _address;
+			try
+			{
+				var address = vm.APEventInfo.CompleteAddress;
+				switch (Device.OS)
+				{
+					case TargetPlatform.iOS:
+						Device.OpenUri(new Uri(String.Format("http://maps.apple.com/?daddr={0}", address)));
+
+						break;
+
+					case TargetPlatform.Android:
+						Device.OpenUri(
+						  new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(address))));
+
+						break;
+					case TargetPlatform.Windows:
+					case TargetPlatform.WinPhone:
+						Device.OpenUri(
+						  new Uri(string.Format("bingmaps:?cp={0}", vm.EventInfo.GPSLatitude + "~" + vm.EventInfo.GPSLongitude)));
+						break;
+				}
+			}
+			catch (Exception ex)
+			{
+				Xamarin.Insights.Report(ex);
+			}
 
 		}
 

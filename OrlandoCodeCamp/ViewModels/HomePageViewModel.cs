@@ -70,6 +70,47 @@ namespace com.ithiredguns.orlandocodecamp
 		{
 			get;set;
 		}
+
+		public Event APEventInfo
+		{
+			get; set;
+		}
+
+		public string EventHours
+		{
+			get
+			{
+				if (APEventInfo != null)
+				{
+					return string.Format("{0:t}", APEventInfo.EventStart) + " to " + string.Format("{0:t}", APEventInfo.EventEnd);
+				}
+				else
+				{
+					return string.Empty;
+				}
+			}
+
+
+		}
+
+		public string APEventTimings
+		{
+			get
+			{
+				if (EventInfo != null)
+				{
+					return string.Format("{0:M/d/yyyy h:mm tt}", APEventInfo.EventStart) + " to " + string.Format("{0:t}", APEventInfo.EventEnd);
+				}
+				else
+				{
+					return string.Empty;
+				}
+			}
+
+
+		}
+
+
 		public string EventTimings { 
 			get
 			{

@@ -21,8 +21,20 @@ namespace com.ithiredguns.orlandocodecamp
 	{
 
 		 Event _event = null;
+		 Event _apevent = new Event
+		 {
+			 ID = 2,
+			 CompleteAddress = "Liam Fitzpatrick's Irish Restaurant, Market Promenade Avenue, Lake Mary, FL 32746",
+			 EventStart = DateTime.Parse("4/8/2017 6:00:00 PM"),
+			 EventEnd = DateTime.Parse("4/8/2017 8:00:00 PM"),
+			 IsCurrent = true,
+			 SocialMediaHashtag = "#OrlandoCC",
+			 SpeakerRegistrationOpen = true,
+			 Name = "After Party"
+		 };
 
-		 HttpClient _client;
+
+		HttpClient _client;
 
 		//string _allTracksUrl = "http://orlandocodecamp.com/api/TrackList";
 		//string _allTimeSlotsUrl = "http://orlandocodecamp.com/api/TimeslotList";
@@ -67,6 +79,10 @@ namespace com.ithiredguns.orlandocodecamp
 		DateTime _timeOfLastAnnouncementsRefresh  = DateTime.UtcNow;
 		int _refreshAnnouncementsCount = 0;
 
+		public Event APEventInfo
+		{
+			 get { return _apevent; }
+		}
 
 
 		public DateTime TimeOfLastTracksRefresh
@@ -524,6 +540,7 @@ namespace com.ithiredguns.orlandocodecamp
 			}
 		}
 
+			
 
 		async Task GetAllSessionsFromServer()
 		{
@@ -727,7 +744,7 @@ namespace com.ithiredguns.orlandocodecamp
 					_event = new Event();
 					_event.ID = 1;
 					_event.AttendeeRegistrationOpen = true;
-					_event.CompleteAddress = "University Partnership Building, Seminole State College (Sanford), 100 Weldon Blvd, Sanford FL 32746";
+					_event.CompleteAddress = "University Partnership Building, Seminole State College (Sanford),  100 Weldon Blvd, Sanford FL 32746";
 					_event.EventStart = DateTime.Parse("4/8/2017 8:00:00 AM");
 					_event.EventEnd = DateTime.Parse ("4/8/2017 5:00:00 PM");
 					_event.IsCurrent = true;
