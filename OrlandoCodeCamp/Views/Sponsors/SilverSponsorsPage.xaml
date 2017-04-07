@@ -1,56 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="com.ithiredguns.orlandocodecamp.SilverSponsorsPage"
-	xmlns:views="clr-namespace:com.ithiredguns.orlandocodecamp"
-	Title = "Sponsors"
-	>
-		<Grid>
-		<StackLayout>
-			<StackLayout x:Name="SilverSponsorsBanner" 
-				Style="{StaticResource SilverSponsorsBannerStyle}" 
-				Padding="0,10,0,0">
-				<Label FontSize="20" 
-					Text="Thanks to our Silver Sponsors" 
-					HorizontalTextAlignment="Center" 
-					VerticalTextAlignment="Center" 
-					TextColor="Black"
-					FontAttributes="Bold"
-				/>
-				<Label HorizontalTextAlignment="Center" 
-					VerticalTextAlignment="Center" 
-					TextColor="Black" FontSize="14" 
-					Text="Interested in sponsoring CodeCamp?"/>
-				
-        			<Label x:Name="lblSponsorPage" HorizontalTextAlignment="Center" 
-						VerticalTextAlignment="Center"  
-						Text="Check out our sponsor package"
-						TextColor="Blue" 
-						FontSize="15"
-						FontAttributes="Bold" >
-					 <Label.GestureRecognizers>
-       					 <TapGestureRecognizer
-                			Tapped="OnTapGestureRecognizerTapped"
-               				  />
- 						 </Label.GestureRecognizers>
-        			</Label>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="com.ithiredguns.orlandocodecamp.SilverSponsorsPage" xmlns:views="clr-namespace:com.ithiredguns.orlandocodecamp" Title="Sponsors">
+	<ListView x:Name="lstSponsorDetails" HasUnevenRows="true" SeparatorVisibility="None" ItemTapped="Handle_ItemTapped">
+		<ListView.Header>
+			<StackLayout x:Name="SilverSponsorsBanner" Style="{StaticResource SilverSponsorsBannerStyle}" Padding="0,10,0,0">
+				<Label FontSize="20" Text="Thanks to our Silver Sponsors" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" />
+				<Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="14" Text="Interested in sponsoring CodeCamp?" />
+				<Label x:Name="lblSponsorPage" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Check out our sponsor package" TextColor="Blue" FontSize="15" FontAttributes="Bold">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+					</Label.GestureRecognizers>
+				</Label>
 			</StackLayout>
-			<ScrollView Grid.Row="1">
-				<Grid>
-					<ListView x:Name="lstSponsorDetails" 
-						HasUnevenRows="true" 
-						SeparatorVisibility="None" 
-						ItemTapped="Handle_ItemTapped">
-						<ListView.ItemTemplate>
-							<DataTemplate>
-								<ViewCell>
-									<views:SponsorItemTemplate />
-								</ViewCell>
-							</DataTemplate>
-						</ListView.ItemTemplate>
-					</ListView>
-				</Grid>
-			</ScrollView>
-		</StackLayout>
-	</Grid>
+		</ListView.Header>
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<views:SponsorItemTemplate />
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
 </ContentPage>
